@@ -2,15 +2,15 @@
 
 Two weeks ago I posted [an experiment for priors on Bernoulli processes](https://www.lesswrong.com/posts/mgSxBpYvAYPJf2uYb/experiment-test-your-priors-on-bernoulli-processes). I gave you all way too much data, though, so I don't think it worked out to be a very good experiment.
 
-This post provides the correct results and explains what the hidden experiments were.
+This post provides the results and reveals the hidden experiment class.
 
 ## Motivation Behind the Experiment
 
-I was thinking about induction. Suppose you are a Bayesian, and you only have a small number of observations about some time-invariant law. What is the *correct* posterior you should have after these observations? If you just go with the bare observed frequencies, then you will be hopelessly overconfident if you see only a string of yesses or nos.
+The experiment was meant to test induction. Suppose you are a Bayesian, and you only have a small number of observations about some time-invariant law. What is the *correct* posterior you should have after these observations? If you just use the bare observed frequencies, then you will be much too overconfident if you see only yesses or nos. What you need to do is start from some prior, and then update from that.
 
-Your posterior follows directly from your prior, so this is equivalently a question on what the correct *prior* is. Some people have proposed Jeffreys priors or Laplace's rule of succession as non-informative priors. But do these priors actually lead to correct posteriors?
+But what is the correct prior? Some people have proposed Jeffreys priors or Laplace's rule of succession as non-informative priors. Do these actually work? I wanted to see what you guys could come up with. The only way to determine whether a prior is a *good* prior is by running many different experiments and testing whether the posterior after some number of trials is correct across those experiments. No single experiment is enough.
 
-I wanted to put that to the test, experimentally. Naturally, a large part of the test would be how well you could predict *me*. But that doesn't make it a worthless test. Unfortunately, I gave you guys way too much data, and so it didn't really matter what prior you used. I think the experiment would have been much more interesting if I only provided 100 experiments, and then computed the true marginals on a held-out dataset.
+So, I made a dataset of experiments and asked you to induct on the final trial given the previous four. Naturally, the test depends on how well you can predict *me*. But observing provided data can help narrow down the class of experiments I was drawing from. Unfortunately, I gave you guys way too much data, and so it didn't really matter what prior you used. I think the experiment would have been much more interesting if I only provided 100 experiments, and then computed the true marginals on a held-out dataset.
 
 ## Results
 
