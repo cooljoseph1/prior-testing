@@ -1,4 +1,4 @@
-# How good are your priors?
+# Experiment: Test your priors on Bernoulli processes.
 
 I have run 1,000,000 experiments. Each experiment consists of 5 trials with binary outcomes, either $L$ (for left) or $R$ (for right).
 
