@@ -1,4 +1,4 @@
-# Re: Experiment on Bernoulli processes
+# Results of "Experiment on Bernoulli processes"
 
 Two weeks ago I posted [an experiment for priors on Bernoulli processes](https://www.lesswrong.com/posts/mgSxBpYvAYPJf2uYb/experiment-test-your-priors-on-bernoulli-processes). I gave you all way too much data, though, so I don't think it worked out to be a very good experiment.
 
