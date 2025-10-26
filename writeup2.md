@@ -8,9 +8,9 @@ This post provides the results and reveals the hidden experiment class.
 
 The experiment was meant to test induction. Suppose you are a Bayesian, and you only have a small number of observations about some time-invariant law. What is the *correct* posterior you should have after these observations? If you just use the bare observed frequencies, then you will be much too overconfident if you see only yesses or nos. What you need to do is start from some prior, and then update from that.
 
-But what is the correct prior? Some people have proposed Jeffreys priors or Laplace's rule of succession as non-informative priors. Do these actually work? I wanted to see what you guys could come up with. The only way to determine whether a prior is a *good* prior is by running many different experiments and testing whether the posterior after some number of trials is correct across those experiments. No single experiment is enough.
+But what is the correct prior? Some people have proposed Jeffreys priors or Laplace's rule of succession as non-informative priors. Do these actually work? I wanted to see what you guys could come up with.
 
-So, I made a dataset of experiments and asked you to induct on the final trial given the previous four. Naturally, the test depends on how well you can predict *me*. But observing provided data can help narrow down the class of experiments I was drawing from. Unfortunately, I gave you guys way too much data, and so it didn't really matter what prior you used. I think the experiment would have been much more interesting if I only provided 100 experiments, and then computed the true marginals on a held-out dataset.
+The only way to determine whether a prior is a *good* prior is by running many different experiments and testing whether the posterior after some number of trials is correct across those experiments. No single experiment is enough. So, I made a dataset of experiments and asked you to induct on the final trial given the previous four. Naturally, the test depends on how well you can predict *me*. But observing the provided data can help narrow down the class of experiments I was drawing from. Unfortunately, I gave you guys way too much data, and so it didn't really matter what prior you used. I think the experiment would have been much more interesting if I only provided 100 experiments, and then computed the true marginals on a held-out dataset.
 
 ## Results
 
@@ -54,16 +54,20 @@ Combining everything together, I got the true marginal probabilities to six sign
 
 ## Who wins?
 
-Because you all were so close, I decided to resort to the true probabilities to determine a winner. My scoring function is the sum of the KL divergence from the true marginal probability to your guess, for each of the five marginal probabilities. Your scores for your public submissions are
+Because you all were so close, I decided to resort to the true probabilities to determine a winner. My scoring function is
+$$\sum_{n=0}^4 w_i \left[ p_i \ln\left(\frac{p_i}{q_i}\right) + (1 - p_i) \ln\left(\frac{1 - p_i}{1 - q_i}\right)\right],$$
+where $w_i$ is the true probability of $i$ $R$s in the first four trials, $p_i$ is the true $i$th marginal probability, and $q_i$ is your $i$th guessed marginal probability. (This is a weighted average of the KL divergence from the true marginals to your guesses.)
+
+Your scores for your public submissions are
 | Name            | Score        |
 |-----------------|--------------|
-| Unnamed         | 0.0000015762 |
-| One             | 0.0000015850 |
-| DaemonicSigil   | 0.0000029092 |
-| James Camacho   | 0.0016014697 |
-| Cleo Nardo      | 0.0025952372 |
+| Unnamed         | 2.999e-07    |
+| One             | 3.017e-07    |
+| DaemonicSigil   | 5.433e-07    |
+| James Camacho   | 2.840e-04    |
+| Cleo Nardo      | 4.520e-04    |
 
-This means that Unnamed wins. Congratulations!
+It's very close, but Unnamed wins. Congratulations!
 
 ## Resolving the Manifold Market
 As promised, I resolved the Manifold market using the marginals for the original 1,000,000 trials. Manifold Markets didn't allow me to resolve to a sub-percentage precision, so I randomly rounded a percentage $x$ to either its ceiling or its floor with probabilities $\{x\}$ and $1 - \{x\}$, where $\{x\}$ is the fractional part of $x$.

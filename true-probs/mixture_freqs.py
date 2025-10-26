@@ -65,5 +65,11 @@ mixture_num = sum(d[:, 0] * d[:, 1] * w for d, w in weights)
 
 mixture_freqs = mixture_num / mixture_denom
 
+print("Probabilities of first n Rs:")
+for i, freq in enumerate(mixture_denom):
+    print(f"{i}: {freq.item():.10f}")
+
+
+print("\nMarginal probabilities:")
 for i, freq in enumerate(mixture_freqs):
     print(f"{i}: {freq.item():.10f}")
