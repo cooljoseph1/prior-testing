@@ -30,7 +30,7 @@ Most of you were very close, only off by a few parts in 10,000. I was
 especially impressed by Cleo Nardo's submission. She guessed 10.6%, 34.8%, 50%, 65.2%, and 89.4% without even looking at the CSV, which were all within a couple percent of the correct values.
 
 
-## The Bernoulli Processes
+## The Class of Experiments
 
 There were four types of experiments.
 1. **A fair coin**. In this experiment, each trial had a 50% chance exactly of giving $R$.
@@ -40,9 +40,9 @@ There were four types of experiments.
 
 The four types of experiments were mixed with weights 10%, 10%, 10%, and 70%.
 
-The second and third cases can both be viewed as drawing the Bernoulli probability from a mixture of Beta distributions (so that the correct prior is a Beta prior). For case (2), the Beta distribution is $\mathrm{Beta}(1, 1)$, and for case (3), the distribution is an even mixture of $\mathrm{Beta}(1, 4)$ and $\mathrm{Beta}(4, 1)$.
+The second and third cases can both be viewed as drawing the Bernoulli probability from a mixture of Beta distributions (so that the correct prior is a mixture of Beta distributions). For case (2), the Beta distribution is $\mathrm{Beta}(1, 1)$, and for case (3), the distribution is an even mixture of $\mathrm{Beta}(1, 4)$ and $\mathrm{Beta}(4, 1)$.
 
-Cases (1) and (4) do not have Beta priors. Case (4) in particular is tricky. The probability for the Bernoulli process is the stationary point of a Markov chain, which involves multiplying and adding many random variables together.
+Cases (1) and (4) do not have Beta priors. Case (4) in particular is tricky. The probability for its Bernoulli process is the stationary point of a Markov chain, which involves multiplying and adding many random variables together to calculate.
 
 ## Calculating the True Marginal Probabilities
 
