@@ -54,7 +54,7 @@ Combining everything together, I got the true marginal probabilities to six sign
 
 ## Who wins?
 
-Because you all were so close, I decided to resort to the true probabilities to determine a winner. My scoring function is the KL divergence from the true marginal probability to your guess, for each of the five marginal probabilities. Your scores for your public submissions are
+Because you all were so close, I decided to resort to the true probabilities to determine a winner. My scoring function is the sum of the KL divergence from the true marginal probability to your guess, for each of the five marginal probabilities. Your scores for your public submissions are
 | Name            | Score        |
 |-----------------|--------------|
 | Unnamed         | 0.0000015762 |
@@ -66,4 +66,4 @@ Because you all were so close, I decided to resort to the true probabilities to 
 This means that Unnamed wins. Congratulations!
 
 ## Resolving the Manifold Market
-As promised, I resolved the Manifold market using the marginals for the original 1,000,000 trials. Manifold Markets didn't allow me to resolve to a sub-percentage precision, so I randomly rounded a percentage $x$ to its ceiling or floor with probabilities $\{x\}$ and $1 - \{x\}$, where $\{x\}$ is the fractional part of $x$.
+As promised, I resolved the Manifold market using the marginals for the original 1,000,000 trials. Manifold Markets didn't allow me to resolve to a sub-percentage precision, so I randomly rounded a percentage $x$ to either its ceiling or its floor with probabilities $\{x\}$ and $1 - \{x\}$, where $\{x\}$ is the fractional part of $x$.
